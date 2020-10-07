@@ -1,0 +1,62 @@
+import React, {FunctionComponent, useState} from 'react';
+import {StyleProp, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {styles} from './styles';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import {LineAwesomeIcon} from '../../constants/LineAwesomeIconSet';
+import {COLORS} from '../../constants/colors';
+
+type SwipeableComponentProps = {
+  onRightButtonPress: () => void;
+  disabledSwipe?: boolean;
+  style?: StyleProp<ViewStyle>;
+  noticeMode?: boolean;
+};
+
+export const SwipeableComponent: FunctionComponent<
+  SwipeableComponentProps
+> = props => {
+  const {
+    onRightButtonPress,
+    children,
+    disabledSwipe,
+    style,
+    noticeMode,
+  } = props;
+  const [swipeableRef, setSwipeableRef] = useState<Swipeable | null>(null);
+
+  const handleDeleteButton = () => {
+    if (swipeableRef) {
+      swipeableRef.close();
+    }
+    onRightButtonPress();
+  };
+
+  const renderRightActions = () => {
+    return (
+      <View style={[styles.rightAction, style]}>
+        <TouchableOpacity onPress={handleDeleteButton}>
+          <LineAwesomeIcon
+            name={noticeMode ? 'envelope-open' : 'trash'}
+            size={22}
+            color={COLORS.SECONDARY_DARK_1}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  return (
+    <Swipeable
+      enabled={!disabledSwipe}
+      childrenContainerStyle={[styles.swipeableContainer, style]}
+      useNativeAnimations={true}
+      ref={setSwipeableRef}
+      friction={2}
+      leftThreshold={20}
+      overshootRight={false}
+      rightThreshold={30}
+      renderRightActions={renderRightActions}>
+      {children}
+    </Swipeable>
+  );
+};

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "754791886342",
+    "firebase_url": "https://gazprom-media.firebaseio.com",
+    "project_id": "gazprom-media",
+    "storage_bucket": "gazprom-media.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754791886342:android:946713135bdf8eca941d87",
+        "android_client_info": {
+          "package_name": "com.rocket.hackatonapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754791886342-ue1ppq01cd9fc1djhn75brmkkv3h91r5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rocket.hackatonapp",
+            "certificate_hash": "30cfb7c74ad3bd4d07a652b6b4b1f99fe959f907"
+          }
+        },
+        {
+          "client_id": "754791886342-970k1bftpf52spjk33pqenqh1f39pmso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQvfisOH1OGPrLKj6swfdsZcarkuzeVxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754791886342-970k1bftpf52spjk33pqenqh1f39pmso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
